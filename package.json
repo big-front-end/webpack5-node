@@ -1,0 +1,50 @@
+{
+    "name": "service",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "build": "cross-env NODE_ENV=prod webpack --config config/webpack.config.prod.js",
+        "dev": "cross-env NODE_ENV=dev nodemon --exec babel-node --inspect src/app.js",
+        "clean": "rimraf dist",
+        "prepare": "husky install"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "lint-staged": {
+        "*.{vue,js,ts}": "eslint --fix"
+    },
+    "dependencies": {
+        "@koa/router": "^10.0.0",
+        "koa": "^2.13.1",
+        "module-alias": "^2.2.2",
+        "npmlog": "^4.1.2",
+        "require-directory": "^2.1.1"
+    },
+    "devDependencies": {
+        "@babel/core": "^7.14.0",
+        "@babel/node": "^7.13.13",
+        "@babel/preset-env": "^7.14.0",
+        "babel-loader": "^8.2.2",
+        "clean-webpack-plugin": "^4.0.0-alpha.0",
+        "cross-env": "^7.0.3",
+        "eslint": "^7.25.0",
+        "eslint-config-airbnb-base": "^14.2.1",
+        "eslint-config-prettier": "^8.3.0",
+        "eslint-plugin-import": "^2.22.1",
+        "eslint-plugin-prettier": "^3.4.0",
+        "husky": "^6.0.0",
+        "nodemon": "^2.0.7",
+        "rimraf": "^3.0.2",
+        "terser-webpack-plugin": "^5.1.1",
+        "webpack": "^5.36.2",
+        "webpack-cli": "^4.6.0",
+        "webpack-merge": "^5.7.3",
+        "webpack-node-externals": "^3.0.0"
+    },
+    "_moduleAliases": {
+        "@": "./src",
+        "@controller": "./src/controller/v1"
+    }
+}
